@@ -4,7 +4,7 @@ using Assets.Scripts;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using MetaphoricalSheep.UnityTools.Audio;
-using TwoBirds.GameEngine.Scripts.Controllers;
+using TwoBirds.GameEngine.Controllers;
 
 namespace SpaceShooter.Entities.Scripts.Controller
 {

@@ -1,7 +1,7 @@
 ﻿using TwoBirds.GameEngine.ScriptableObjects;
 using UnityEngine;
 
-namespace TwoBirds.GameEngine.Scripts.Controllers
+namespace TwoBirds.GameEngine.Controllers
 {
     [System.Serializable]
     public abstract class AbstractGameController : MonoBehaviour

@@ -1,4 +1,4 @@
-﻿namespace TwoBirds.GameEngine.Scripts
+﻿namespace TwoBirds.GameEngine.Events
 {
     public interface IGameEventListener
     {

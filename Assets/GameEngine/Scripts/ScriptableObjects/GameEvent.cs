@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using TwoBirds.GameEngine.Scripts;
+using TwoBirds.GameEngine.Events;
 using UnityEngine;
 
 namespace TwoBirds.GameEngine.ScriptableObjects

@@ -2,7 +2,7 @@
 using UnityEngine.Events;
 using TwoBirds.GameEngine.ScriptableObjects;
 
-namespace TwoBirds.GameEngine.Scripts.Events
+namespace TwoBirds.GameEngine.Events
 {
     public class GameEventListener : AbstractEventListener, IGameEventListener
     {

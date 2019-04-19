@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace TwoBirds.GameEngine.Scripts.Events
+namespace TwoBirds.GameEngine.Events
 {
     public abstract class AbstractEventListener :  MonoBehaviour
     {
