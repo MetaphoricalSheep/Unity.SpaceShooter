@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Assets.Scripts;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using MetaphoricalSheep.UnityTools.Audio;
 
-namespace Assets.Scripts
+namespace SpaceShooter.Entities.Scripts.Controller
 {
-    public class GameController : MonoBehaviour
+    public class GameController : AbstractGameController
     {
         private const float easeDuration = 0.3f;
 
