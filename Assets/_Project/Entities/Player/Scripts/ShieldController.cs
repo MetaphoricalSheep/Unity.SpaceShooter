@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using SpaceShooter.Entities.Scripts.Controller;
+using UnityEngine;
 
 namespace Assets.Scripts
 {

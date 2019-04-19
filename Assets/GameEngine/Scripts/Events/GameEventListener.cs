@@ -6,8 +6,10 @@ namespace TwoBirds.GameEngine.Scripts.Events
 {
     public class GameEventListener : AbstractEventListener, IGameEventListener
     {
-        [SerializeField] private readonly IGameEvent _gameEvent;
-        [SerializeField] private readonly UnityEvent _response;
+        [SerializeField]
+        private GameEvent _gameEvent;
+        [SerializeField]
+        private UnityEvent _response;
 
         public void OnEventRaised()
         {

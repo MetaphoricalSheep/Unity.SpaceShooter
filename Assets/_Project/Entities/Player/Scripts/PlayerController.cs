@@ -1,4 +1,4 @@
-﻿using TwoBirds.GameEngine.ScriptableObjects;
+﻿using SpaceShooter.Entities.Scripts.Controller;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -12,19 +12,16 @@ namespace Assets.Scripts
         public Boundary Boundary;
         public GameObject Projectile;
         public Transform ProjectileSpawn;
-        public AudioVolume gameSoundsVolume;
 
         private float nextFire;
 
         private Rigidbody rigidBody;
         private AudioSource audioSource;
 
-
         private void Setup()
         {
             rigidBody = GetComponent<Rigidbody>();
             audioSource = GetComponent<AudioSource>();
-            audioSource.volume = gameSoundsVolume.Volume;
         }
 
         public void Start()

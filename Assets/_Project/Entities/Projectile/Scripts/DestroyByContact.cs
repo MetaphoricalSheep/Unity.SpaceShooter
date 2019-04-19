@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using SpaceShooter.Entities.Scripts.Controller;
 
 namespace Assets.Scripts
 {

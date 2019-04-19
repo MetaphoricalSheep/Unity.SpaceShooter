@@ -5,7 +5,7 @@ using UnityEngine;
 namespace TwoBirds.GameEngine.ScriptableObjects
 {
     [CreateAssetMenu(fileName = "New Game Event", menuName = "Game Event", order = 52)]
-    public class GameEvent : ScriptableObject, IGameEvent
+    public class GameEvent : ScriptableObject
     {
         private readonly List<IGameEventListener> _listeners = new List<IGameEventListener>();
 

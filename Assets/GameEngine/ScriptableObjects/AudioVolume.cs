@@ -7,7 +7,7 @@ namespace TwoBirds.GameEngine.ScriptableObjects
     {
         [SerializeField]
         [Range(0f, 1f)]
-        private float _volume = 100f;
+        private float _volume = 1f;
 
         public float Volume => _volume;
     }
