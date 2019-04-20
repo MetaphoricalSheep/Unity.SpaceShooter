@@ -8,6 +8,7 @@ namespace TwoBirds.GameEngine.Controllers
     {
         public void OnMasterVolumeChange(AudioVolume masterVolumeData)
         {
+            Debug.Log($"RUNNING: {masterVolumeData.Volume}");
             AudioListener.volume = masterVolumeData.Volume;
         }
     }

@@ -58,12 +58,14 @@ namespace Assets.Scripts
 
         private void Fire()
         {
-            if (Input.GetButton("Fire1") && Time.time > nextFire && !GameController.isPaused)
+            if (!Input.GetButton("Fire1") || !(Time.time > nextFire) || GameController.isPaused)
             {
-                nextFire = Time.time + FireRate;
-                Instantiate(Projectile, ProjectileSpawn.position, ProjectileSpawn.rotation);
-                audioSource.Play();
+                return;
             }
+
+            nextFire = Time.time + FireRate;
+            Instantiate(Projectile, ProjectileSpawn.position, ProjectileSpawn.rotation);
+            audioSource.Play();
         }
     }
 }

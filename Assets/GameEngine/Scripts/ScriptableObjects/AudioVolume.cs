@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
+using UnityEngine;
 
 namespace TwoBirds.GameEngine.ScriptableObjects
 {
@@ -6,9 +7,12 @@ namespace TwoBirds.GameEngine.ScriptableObjects
     public class AudioVolume : ScriptableObject
     {
         [SerializeField]
+        private string _name;
+        [SerializeField]
         [Range(0f, 1f)]
         private float _volume = 1f;
 
-        public float Volume => _volume;
+        public string Name => _name;
+        public float Volume { get => _volume; set => _volume = value; }
     }
 }
