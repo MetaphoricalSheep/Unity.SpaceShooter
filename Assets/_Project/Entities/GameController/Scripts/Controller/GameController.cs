@@ -20,6 +20,7 @@ namespace SpaceShooter.Entities.Scripts.Controller
         public Text restartText;
         public Text gameOverText;
         public Text pauseText;
+        public Canvas _settingsMenu;
 
         public static PlayerStats PlayerStats = new PlayerStats();
 
@@ -37,6 +38,7 @@ namespace SpaceShooter.Entities.Scripts.Controller
         private int score;
         private bool restart;
         private AudioSource gameMusic;
+        private bool _isMenuOpen;
 
         public void Start()
         {
@@ -48,6 +50,7 @@ namespace SpaceShooter.Entities.Scripts.Controller
         {
             HandleRestartKey();
             HandlePauseKey();
+            HandleMenuKey();
         }
 
         public void AddScore(int score)
@@ -62,6 +65,14 @@ namespace SpaceShooter.Entities.Scripts.Controller
             gameOverText.text = "Game Over!";
             gameMusic.EasePitch(3f, 0.45f);
             GameOverEvent?.Invoke(score);
+        }
+
+        public void OnGameResumed()
+        {
+            ResumeGame();
+            PauseEvent?.Invoke();
+            _isMenuOpen = false;
+            _settingsMenu.enabled = false;
         }
 
         private IEnumerator SpawnWaves()
@@ -107,6 +118,28 @@ namespace SpaceShooter.Entities.Scripts.Controller
             ResumeGame();
         }
 
+        private void HandleMenuKey()
+        {
+            if (!Input.GetKeyDown(KeyCode.Escape))
+            {
+                return;
+            }
+
+            if (_isMenuOpen)
+            {
+                _settingsMenu.enabled = false;
+                _isMenuOpen = false;
+                ResumeGame();
+                PauseEvent?.Invoke();
+                return;
+            }
+
+            _settingsMenu.enabled = true;
+            _isMenuOpen = true;
+            PauseGame();
+            PauseEvent?.Invoke();
+        }
+
         private void HandleRestartKey()
         {
             if (restart)
@@ -122,7 +155,7 @@ namespace SpaceShooter.Entities.Scripts.Controller
 
         private void HandlePauseKey()
         {
-            if (Input.GetKeyDown(KeyCode.P))
+            if (Input.GetKeyDown(KeyCode.P) && !_isMenuOpen)
             {
                 OnPauseKey();
             }
